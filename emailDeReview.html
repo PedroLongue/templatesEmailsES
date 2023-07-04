@@ -1,0 +1,449 @@
+<!-- Modelo padrão Yourviews -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avalie o produto na {{StoreInfo.StoreName}}</title>
+
+    <style>
+        .yv-mail {
+            width: 600px;
+            max-width: 600px;
+        }
+
+        .yv-mail * {
+            font-size: 16px;
+            font-family: sans-serif;
+        }
+
+        .yv-mail__subject {
+            padding: 20px 15px 20px 15px;
+            font-size: 8px;
+            color: {{StoreInfo.TextColor}};
+        }
+
+        .yv-mail__header {
+            padding: 20px 0 20px 0;
+        }
+
+        .yv-mail__header__image {
+            display: block;
+        }
+
+        .yv-mail__content {
+            padding: 0 30px 0 30px;
+        }
+
+        .yv-mail__content__title {
+            padding: 5px 0 20px 0;
+            font-size: 23px;
+            font-weight: bold;
+            color: {{StoreInfo.TextColor}};
+        }
+
+        .yv-mail__content__user {
+            font-size: 16px;
+            font-weight: bold;
+            color: {{StoreInfo.TextColor}};
+        }
+
+        .yv-mail__content__message {
+            padding: 7px 0 40px 0;
+            font-size: 13px;
+            line-height: 1.35;
+            color: {{StoreInfo.TextColor}};
+        }
+
+        .yv-mail__content__box {
+            border: 1px solid #DDDDDD;
+            border-radius: 4px;
+        }
+
+        .yv-mail__content__image {
+            padding: 20px 0 10px 0;
+        }
+
+        .yv-mail__content__evaluation-message {
+            font-size: 10px;
+            color: {{StoreInfo.TextColor}};
+        }
+
+        .yv-mail__content__evaluation-product {
+            padding: 6px 0 6px 0;
+            font-size: 12px;
+            font-weight: bold;
+            line-height: 1.4;
+            color: {{StoreInfo.TextColor}};
+        }
+
+        .yv-mail__content__evaluation__container__label {
+            font-size: 8px;
+            color: {{StoreInfo.TextColor}};
+        }
+
+        .yv-mail__content__evaluation__container__display__star {
+            display: inline-block;
+            height: 50px;
+            font-size: 35px;
+            text-decoration: none;
+            color: {{StoreInfo.StarColor}};
+        }
+
+        .yv-mail__content__evaluation-button {
+            padding: 20px 0 20px 0;
+        }
+
+        .yv-mail__content__evaluation-button__link__body__content {
+            display: inline-block;
+            padding: 10px 65px 10px 65px;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: {{StoreInfo.TextButtonColor}};
+            border: 3px solid {{StoreInfo.ButtonColor}};
+            border-radius: 25px;
+            background-color: {{StoreInfo.ButtonColor}};
+        }
+
+        .yv-mail__unsubscribe {
+            padding: 20px 15px 20px 15px;
+            font-size: 8px;
+            line-height: 1.75;
+        }
+
+        .yv-mail__unsubscribe__link {
+            cursor: pointer;
+            font-size: 8px;
+            color: {{StoreInfo.MainColor}};
+        }
+
+        .yv-mail__footer {
+            padding: 15px 0 30px;
+        }
+
+        .yv-mail__separator-margin {
+            padding: 40px 0 0;
+        }
+
+        @media (max-width: 600px) {
+            .yv-mail {
+                width: 375px;
+                max-width: 375px;
+            }
+        }
+    </style>
+</head>
+
+<body style="margin: 0; padding: 0;">
+    <!-- Email body container -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td>
+                <!-- Email body -->
+                <table class="yv-mail" align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse;">
+                    <!-- Subject line -->
+                    <tr>
+                        <td class="yv-mail__subject" align="center" bgcolor="{{StoreInfo.BackgroundColor}}">
+                            Cuéntanos qué opinas sobre la(o) {{Product.Name}} y ayuda a otras personas a conocer más sobre el producto.
+                        </td>
+                    </tr>
+
+                    <!-- Email content separator -->
+                    <tr>
+                        <td align="center" width="100%" bgcolor="{{StoreInfo.BackgroundColor}}">
+                            <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse;">
+                                <tr>
+                                    <td class="yv-mail__separator" align="center" width="100%" height="1px" bgcolor="{{StoreInfo.MainColor}}"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Email header-->
+                    <tr>
+                        <!-- Email header image container -->
+                        <td class="yv-mail__header" align="center" bgcolor="{{StoreInfo.BackgroundColor}}">
+                            <!-- Email header image -->
+                            <img class="yv-mail__header__image" src="{{StoreInfo.StoreLogo}}" alt="store logo" width="auto" height="75" />
+                        </td>
+                    </tr>
+
+                    <!-- Email main body content -->
+                    <tr>
+                        <td class="yv-mail__content" bgcolor="{{StoreInfo.BackgroundColor}}">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" align="center">
+                                <!-- Email body store title -->
+                                <tr>
+                                    <td class="yv-mail__content__title" align="left">
+                                        ¡Queremos conocer tu opinión sobre el producto!
+                                    </td>
+                                </tr>
+
+                                <!-- Email body user name -->
+                                <tr>
+                                    <td class="yv-mail__content__user" align="left">
+                                      Hola {{firstName UserInfo.Name}},
+                                    </td>
+                                </tr>
+
+                                <!-- Email body store message -->
+                                <tr>
+                                    <td class="yv-mail__content__message" align="left">
+                                      Siempre estamos buscando mejoras para ti, por eso nos gustaría conocer tu evaluación sobre el producto:
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td bgcolor="{{StoreInfo.BackgroundColor}}" align="center">
+                                        <table class="yv-mail__content__box" border="0" cellpadding="0" cellspacing="0" align="center" width="284px" height="auto">
+
+                                            <!-- Email body product image container -->
+                                            <tr>
+                                                <td class="yv-mail__content__image" align="center" border="0" width="100px" style="width: 100px;">
+                                                    <table border="0" cellpadding="0" cellspacing="0" align="center" width="100px" height="auto">
+                                                        <tr>
+                                                            <td align="center" border="0" style="direction:ltr;font-size:0px;padding:0px;text-align:center;">
+                                                                <div style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+                                                                    <table class="yv-mail__content__image__container" border="0" cellpadding="0" cellspacing="0" align="center" width="100px" height="auto" style="max-width: 100px;">
+                                                                        <!-- Email body product image -->
+                                                                        <tr>
+                                                                            <td class="yv-mail__content__image__container__display" bgcolor="{{StoreInfo.BackgroundColor}}" align="center" style="width:100px;">
+                                                                                <img class="yv-mail__content__image__container__display__img"
+                                                                                     src="{{Product.ImageUrl}}"
+                                                                                     alt="product image"
+                                                                                     width="100"
+                                                                                     height="auto"
+                                                                                     style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" />
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Email rating product -->
+                                            <tr>
+                                                <td bgcolor="{{StoreInfo.BackgroundColor}}" align="center">
+                                                    <table border="0" cellpadding="0" cellspacing="0" align="center" width="236px" height="auto">
+                                                        <tr>
+                                                            <td class="yv-mail__content__evaluation-product" align="left">
+                                                                {{Product.Name}}
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Email rating -->
+                                            <tr>
+                                                <!-- Email  rating container -->
+                                                <td class="yv-mail__content__evaluation" align="center">
+                                                    <!-- Email rating container display -->
+                                                    <table class="yv-mail__content__evaluation__container" border="0" cellpadding="0" cellspacing="0" align="center" valign="center" width="283px" height="50px">
+                                                        <tr>
+                                                            <!-- Email rating container display label -->
+                                                            <td class="yv-mail__content__evaluation__container__label" bgcolor="{{StoreInfo.BackgroundColor}}" align="center" valign="center" width="20%">
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;Ruim
+                                                            </td>
+
+                                                            <!-- Email rating container display star -->
+                                                            {{#if StoreInfo.WriteReviewUrl}}
+                                                            <td class="yv-mail__content__evaluation__container__display" bgcolor="{{StoreInfo.BackgroundColor}}" align="center" valign="center" width="60%">
+                                                                <table border="0" cellpadding="0" cellspacing="0" align="center" valign="center" width="100%" height="auto">
+                                                                    <tr>
+                                                                        <td bgcolor="{{StoreInfo.BackgroundColor}}" align="center" valign="center" width="20%">
+                                                                            <a class="yv-mail__content__evaluation__container__display__star"
+                                                                               href="{{replace StoreInfo.WriteReviewUrl "idproduto={IdProductStore}" "productId=" }}{{Product.IdProductStore}}&yv-write-review={{TrackingId}}&yv-sku={{Product.IdSku}}&yv-u={{UserInfo.UserKey}}&yv-o={{Order}}&yv-product-rating=1&utm_source=yourviews&utm_medium=yv_mail&utm_campaign=yv_writereview"
+                                                                               target="_blank"
+                                                                               width="100%">
+                                                                                &#9734;
+                                                                            </a>
+                                                                        </td>
+                                                                        <td bgcolor="{{StoreInfo.BackgroundColor}}" align="center" valign="center" width="20%">
+                                                                            <a class="yv-mail__content__evaluation__container__display__star"
+                                                                               href="{{replace StoreInfo.WriteReviewUrl "idproduto={IdProductStore}" "productId=" }}{{Product.IdProductStore}}&yv-write-review={{TrackingId}}&yv-sku={{Product.IdSku}}&yv-u={{UserInfo.UserKey}}&yv-o={{Order}}&yv-product-rating=2&utm_source=yourviews&utm_medium=yv_mail&utm_campaign=yv_writereview"
+                                                                               target="_blank"
+                                                                               width="100%">
+                                                                                &#9734;
+                                                                            </a>
+                                                                        </td>
+                                                                        <td bgcolor="{{StoreInfo.BackgroundColor}}" align="center" valign="center" width="20%">
+                                                                            <a class="yv-mail__content__evaluation__container__display__star"
+                                                                               href="{{replace StoreInfo.WriteReviewUrl "idproduto={IdProductStore}" "productId=" }}{{Product.IdProductStore}}&yv-write-review={{TrackingId}}&yv-sku={{Product.IdSku}}&yv-u={{UserInfo.UserKey}}&yv-o={{Order}}&yv-product-rating=3&utm_source=yourviews&utm_medium=yv_mail&utm_campaign=yv_writereview"
+                                                                               target="_blank"
+                                                                               width="100%">
+                                                                                &#9734;
+                                                                            </a>
+                                                                        </td>
+                                                                        <td bgcolor="{{StoreInfo.BackgroundColor}}" align="center" valign="center" width="20%">
+                                                                            <a class="yv-mail__content__evaluation__container__display__star"
+                                                                               href="{{replace StoreInfo.WriteReviewUrl "idproduto={IdProductStore}" "productId=" }}{{Product.IdProductStore}}&yv-write-review={{TrackingId}}&yv-sku={{Product.IdSku}}&yv-u={{UserInfo.UserKey}}&yv-o={{Order}}&yv-product-rating=4&utm_source=yourviews&utm_medium=yv_mail&utm_campaign=yv_writereview"
+                                                                               target="_blank"
+                                                                               width="100%">
+                                                                                &#9734;
+                                                                            </a>
+                                                                        </td>
+                                                                        <td bgcolor="{{StoreInfo.BackgroundColor}}" align="center" valign="center" width="20%">
+                                                                            <a class="yv-mail__content__evaluation__container__display__star"
+                                                                               href="{{replace StoreInfo.WriteReviewUrl "idproduto={IdProductStore}" "productId=" }}{{Product.IdProductStore}}&yv-write-review={{TrackingId}}&yv-sku={{Product.IdSku}}&yv-u={{UserInfo.UserKey}}&yv-o={{Order}}&yv-product-rating=5&utm_source=yourviews&utm_medium=yv_mail&utm_campaign=yv_writereview"
+                                                                               target="_blank"
+                                                                               width="100%">
+                                                                                &#9734;
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                            {{else}}
+                                                            <td class="yv-mail__content__evaluation__container__display" bgcolor="{{StoreInfo.BackgroundColor}}" align="center" valign="center" width="60%">
+                                                                <table border="0" cellpadding="0" cellspacing="0" align="center" valign="center" width="100%" height="auto">
+                                                                    <tr>
+                                                                        <td bgcolor="{{StoreInfo.BackgroundColor}}" align="center" valign="center" width="20%">
+                                                                            <a class="yv-mail__content__evaluation__container__display__star"
+                                                                               href="{{BaseUrl}}?idproduto={{Product.IdProductStore}}&storeKey={{StoreInfo.StoreKey}}&yv-write-review={{TrackingId}}&yv-u={{UserInfo.UserKey}}&yv-o={{Order}}&yv-sku={{Product.IdSku}}&yv-product-rating=1&utm_source=yourviews&utm_medium=yv_mail&utm_campaign=yv_writereview"
+                                                                               target="_blank"
+                                                                               width="100%">
+                                                                                &#9734;
+                                                                            </a>
+                                                                        </td>
+                                                                        <td bgcolor="{{StoreInfo.BackgroundColor}}" align="center" valign="center" width="20%">
+                                                                            <a class="yv-mail__content__evaluation__container__display__star"
+                                                                               href="{{BaseUrl}}?idproduto={{Product.IdProductStore}}&storeKey={{StoreInfo.StoreKey}}&yv-write-review={{TrackingId}}&yv-u={{UserInfo.UserKey}}&yv-o={{Order}}&yv-sku={{Product.IdSku}}&yv-product-rating=2&utm_source=yourviews&utm_medium=yv_mail&utm_campaign=yv_writereview"
+                                                                               target="_blank"
+                                                                               width="100%">
+                                                                                &#9734;
+                                                                            </a>
+                                                                        </td>
+                                                                        <td bgcolor="{{StoreInfo.BackgroundColor}}" align="center" valign="center" width="20%">
+                                                                            <a class="yv-mail__content__evaluation__container__display__star"
+                                                                               href="{{BaseUrl}}?idproduto={{Product.IdProductStore}}&storeKey={{StoreInfo.StoreKey}}&yv-write-review={{TrackingId}}&yv-u={{UserInfo.UserKey}}&yv-o={{Order}}&yv-sku={{Product.IdSku}}&yv-product-rating=3&utm_source=yourviews&utm_medium=yv_mail&utm_campaign=yv_writereview"
+                                                                               target="_blank"
+                                                                               width="100%">
+                                                                                &#9734;
+                                                                            </a>
+                                                                        </td>
+                                                                        <td bgcolor="{{StoreInfo.BackgroundColor}}" align="center" valign="center" width="20%">
+                                                                            <a class="yv-mail__content__evaluation__container__display__star"
+                                                                               href="{{BaseUrl}}?idproduto={{Product.IdProductStore}}&storeKey={{StoreInfo.StoreKey}}&yv-write-review={{TrackingId}}&yv-u={{UserInfo.UserKey}}&yv-o={{Order}}&yv-sku={{Product.IdSku}}&yv-product-rating=4&utm_source=yourviews&utm_medium=yv_mail&utm_campaign=yv_writereview"
+                                                                               target="_blank"
+                                                                               width="100%">
+                                                                                &#9734;
+                                                                            </a>
+                                                                        </td>
+                                                                        <td bgcolor="{{StoreInfo.BackgroundColor}}" align="center" valign="center" width="20%">
+                                                                            <a class="yv-mail__content__evaluation__container__display__star"
+                                                                               href="{{BaseUrl}}?idproduto={{Product.IdProductStore}}&storeKey={{StoreInfo.StoreKey}}&yv-write-review={{TrackingId}}&yv-u={{UserInfo.UserKey}}&yv-o={{Order}}&yv-sku={{Product.IdSku}}&yv-product-rating=5&utm_source=yourviews&utm_medium=yv_mail&utm_campaign=yv_writereview"
+                                                                               target="_blank"
+                                                                               width="100%">
+                                                                                &#9734;
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                            {{/if}}
+
+                                                            <!-- Email rating container display label -->
+                                                            <td class="yv-mail__content__evaluation__container__label" bgcolor="{{StoreInfo.BackgroundColor}}" align="center" valign="center" width="20%">
+                                                                Excelente&nbsp;&nbsp;&nbsp;
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Email rating info about stars -->
+                                            <tr>
+                                                <td class="yv-mail__content__evaluation-message" align="center">
+                                                  Haz clic en las estrellas para indicar cuánto te gustó
+                                                </td>
+                                            </tr>
+
+                                            <!-- Email rating button container -->
+                                            <tr>
+                                                <td class="yv-mail__content__evaluation-button" align="center">
+                                                    {{#if StoreInfo.WriteReviewUrl}}
+                                                    <a href="{{replace StoreInfo.WriteReviewUrl "idproduto={IdProductStore}" "productId=" }}{{Product.IdProductStore}}&yv-write-review={{TrackingId}}&yv-sku={{Product.IdSku}}&yv-u={{UserInfo.UserKey}}&yv-o={{Order}}&utm_source=yourviews&utm_medium=yv_mail&utm_campaign=yv_writereview"
+                                                       target="_blank"
+                                                       class="yv-mail__content__evaluation-button__link">
+                                                        {{else}}
+                                                        <a href="{{BaseUrl}}?idproduto={{Product.IdProductStore}}&storeKey={{StoreInfo.StoreKey}}&yv-write-review={{TrackingId}}&yv-u={{UserInfo.UserKey}}&yv-o={{Order}}&yv-sku={{Product.IdSku}}&utm_source=yourviews&utm_medium=yv_mail&utm_campaign=yv_writereview"
+                                                           target="_blank"
+                                                           class="yv-mail__content__evaluation-button__link">
+                                                            {{/if}}
+                                                            <table class="yv-mail__content__evaluation-button__link__body" border="0" cellpadding="0" cellspacing="0" align="center" height="auto">
+                                                                <tr>
+                                                                    <td class="yv-mail__content__evaluation-button__link__body__content" align="center">
+                                                                      Evaluar
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </a>
+                                                    </a>
+                                                </td>
+                                            </tr>
+
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Email content separator -->
+                    <tr>
+                        <td class="yv-mail__separator-margin" align="center" width="100%" bgcolor="{{StoreInfo.BackgroundColor}}"></td>
+                    </tr>
+                    <tr>
+                        <td align="center" width="100%" bgcolor="{{StoreInfo.BackgroundColor}}">
+                            <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse;">
+                                <tr>
+                                    <td class="yv-mail__separator" align="center" width="100%" height="1px" bgcolor="{{StoreInfo.MainColor}}"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Email unsubscribe message container -->
+                    <tr>
+                        <td class="yv-mail__unsubscribe" align="center" bgcolor="{{StoreInfo.BackgroundColor}}">
+                            Este es un correo electrónico automático. No es necesario responder.
+                            <br />
+                            Em caso de dúvida, envie um e-mail para nossa Central de Atendimento.
+                            <br />
+                            <br />
+                            En caso de que no desee recibir más este tipo de correo electrónico,
+                            <a class="yv-mail__unsubscribe__link"
+                               href="http://service.yourviews.com.br/user/unsubscribe?storeKey={{StoreInfo.StoreKey}}&uk={{UserInfo.UserKey}}">
+                                haz clic aquí
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- Email footer -->
+                    <tr>
+                        <td class="yv-mail__footer" align="center">
+                            <table class="yv-mail__footer__logo" border="0" cellpadding="0" cellspacing="0" align="center" width="78px" height="auto">
+                                <!-- Email footer logo -->
+                                <tr>
+                                    <td class="yv-mail__footer__logo__display" align="center">
+                                        <img class="yv-mail__footer__logo__display__img"
+                                             src="https://yv-misc.s3.us-east-1.amazonaws.com/customers/yv/icons/yourviews/yv-by-hi/yv-by-hi.png"
+                                             alt="product image"
+                                             width="100%" height="auto" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

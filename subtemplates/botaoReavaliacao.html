@@ -1,0 +1,14 @@
+<table border="0" cellpadding="0" cellspacing="0"  style="padding: 20px;border-collapse: separate !important;border: 2px solid #707070;border-top-left-radius: 5px;border-top-right-radius: 5px;border-bottom-right-radius: 5px;border-bottom-left-radius: 5px;background-color: #909090;border-color:{{StoreInfo.ButtonColor}};background-color:{{StoreInfo.ButtonColor}}">
+  <tbody>
+      <tr>
+          <td align="center" valign="middle" class="" style="font-family: Arial; font-size: 16px;padding:0;">                               
+          {{#if StoreInfo.WriteReviewUrl}}                      
+                      <a href="{{replace StoreInfo.WriteReviewUrl "idproduto={IdProductStore}" "productId=" }}{{Product.IdProductStore}}&yv-write-review={{TrackingId}}&yv-u={{UserInfo.UserKey}}&yv-o={{Order}}&yv-rr={{ReviewRequest}}&yv-sku={{Product.IdSku}}&utm_source=yourviews&utm_medium=yv_mail&utm_campaign=yv_writereview" target="_blank">
+              {{else}}
+                      <a href="{{BaseUrl}}?idproduto={{Product.IdProductStore}}&storeKey={{StoreInfo.StoreKey}}&yv-write-review={{TrackingId}}&yv-u={{UserInfo.UserKey}}&yv-o={{Order}}&yv-rr={{ReviewRequest}}&yv-sku={{Product.IdSku}}&utm_source=yourviews&utm_medium=yv_mail&utm_campaign=yv_writereview" target="_blank">    
+              {{/if}}
+              <span class="" title="Avaliar" style="font-weight: bold;letter-spacing: normal;line-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;color:{{StoreInfo.ButtonTextColor}}">ESCRIBIR EVALUACIÓN</span>                                           </a>
+          </td>
+      </tr>
+  </tbody>
+</table>
